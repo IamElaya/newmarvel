@@ -8,6 +8,10 @@ module.exports = {
     inline: true,
     port: 3333
   },
+  node: {
+    net: 'empty',
+    tls: 'empty'
+  },
   module: {
     loaders: [{
       test: /\.js$/,
