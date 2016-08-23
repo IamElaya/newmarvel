@@ -5,8 +5,37 @@
   <meta charset="utf-8">
   <title>Setup</title>
   <script type="./components/marvelapi.js"></script>
+  <style>
+  body {
+    margin: 10px;
+    overflow: hidden;
+  }
+  figure {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    width: 55px;
+    height: 55px;
+    -webkit-clip-path: ellipse(50% at center);
+    background-repeat: no-repeat; 
+    background-position: 50% 50%;
+    /*background-attachment: fixed;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .error {
+    font-family: 'Courier New', monospace;
+    color: rgb(239, 38, 38);
+    font-weight: bold;
+    font-size: 12px;
+    padding: 5px;
+  }
+  </style>
 </head>
 <body>
+  <div class="images"></div>
   <div id="app"></div>
   <script src="index.js"></script>
 </body>
