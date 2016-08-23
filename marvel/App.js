@@ -14,11 +14,10 @@ var names = []
 var ignores = [
   'http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708'
 ]
-
-var container = document.querySelector('.images')
+var name = "Jean"
 
 paginate({
-  limit: 50
+  limit: 11
 }, function (err) {
   if (err) {
     error.innerText = 'Error: ' + err.message
@@ -30,67 +29,59 @@ paginate({
 })
 
 function paginate (query, cb) {
-    cb = cb || noop
-    query = query || {} 
-    api('characters', {
-      publicKey: keys.public,
-      privateKey: keys.private,
-      timeout: 4000,
-      query: query
-    }, function (err, body, resp) {
-      if (err) {
-        return cb(new Error('invalid request; Marvel server may have timed out'))
-      }
-      if (!(/^2/.test(resp.statusCode))) {
-        return cb(new Error(body.status || body.message))
-      }
-        var data = body.data
-        data.results
-          .filter(validItem)
-          .forEach(function (item){
-            var name = item.name
-            var description = item.description
-            var thumb = item.thumbnail
-            var uri = thumb.path + '/standard_medium.' + thumb.extension
-            images.push(uri)
-            names.push(name)
-
-            var figure = document.createElement('figure')
-            figure.style.backgroundImage = 'url(' + uri + ')'
-            container.appendChild(figure)
-          })
-
-          var offset = data.offset
-          var count = data.count
-          numPages++
-          if (numPages < pages && offset + count < data.total) {
-            query.offset = offset + count
-            paginate(query, cb)
-          } else {
-            cb(null)
-          }
-
-        // var name = body.data.results[0].name
-        // var description = body.data.results[0].description
-        // console.log(body)
-        // console.log(resp)
-        // return name
-        // return description
-        // console.log(name)
-        // // total # of items
-        // console.log(body.data.total)
-        // // array of characters
-        // console.log(body.data.results)
-      function validItem (item) {
-        if (!item.thumbnail || !item.thumbnail.path) {
-          return false
-        }
+  cb = cb || noop
+  query = query || {} 
+  api('characters', {
+    publicKey: keys.public,
+    privateKey: keys.private,
+    timeout: 4000,
+    query: {
+      'nameStartsWith': name
+    }
+  }, function (err, body, resp) {
+    if (err) {
+      return cb(new Error('invalid request; Marvel server may have timed out'))
+    }
+    if (!(/^2/.test(resp.statusCode))) {
+      return cb(new Error(body.status || body.message))
+    }
+    var data = body.data
+    data.results
+      .filter(validItem)
+      .forEach(function (item){
+        var name = item.name
+        var description = item.description
         var thumb = item.thumbnail
-        return thumb.path.indexOf('image_not_available') === -1
-          && ignores.indexOf(thumb.path) === -1
-      }
-    });
+        var uri = thumb.path + '/standard_incredible.' + thumb.extension
+        console.log(name)
+        images.push(uri)
+        names.push(name)
+        $("#images").append("<p>" + name + "</p>")
+        $("#images").append("<figure style='background-image:url(" + uri + ")'></figure>")
+
+      })
+
+    var offset = data.offset
+    var count = data.count
+    numPages++
+    if (numPages < pages && offset + count < data.total) {
+      query.offset = offset + count
+      paginate(query, cb)
+    } else {
+      cb(null)
+      console.log(data)
+    }
+  });
+
+  function validItem (item) {
+    if (!item.thumbnail || !item.thumbnail.path) {
+      return false
+    }
+    var thumb = item.thumbnail
+    return thumb.path.indexOf('image_not_available') === -1
+      && ignores.indexOf(thumb.path) === -1
   }
+}
 
 
 var App = React.createClass({
@@ -103,8 +94,6 @@ var App = React.createClass({
       currentCharExtension: ""
     };
   },
-
-
 
   render: function() {
     return <div>{this.state.name}</div>

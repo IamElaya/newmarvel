@@ -1,0 +1,26 @@
+body {
+    margin: 10px;
+    overflow: hidden;
+  }
+figure {
+    display: inline-block;
+    padding: 0;
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    -webkit-clip-path: ellipse(50% at center);
+    background-repeat: no-repeat; 
+    background-position: 50% 50%;
+    /*background-attachment: fixed;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.error {
+    font-family: 'Courier New', monospace;
+    color: rgb(239, 38, 38);
+    font-weight: bold;
+    font-size: 12px;
+    padding: 5px;
+  }
