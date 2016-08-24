@@ -14,7 +14,7 @@ var names = []
 var ignores = [
   'http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708'
 ]
-var name = "Jean"
+var name = "Magneto"
 
 paginate({
   limit: 1
