@@ -17,7 +17,7 @@ var ignores = [
 var name = "Jean"
 
 paginate({
-  limit: 11
+  limit: 1
 }, function (err) {
   if (err) {
     error.innerText = 'Error: ' + err.message
@@ -52,13 +52,11 @@ function paginate (query, cb) {
         var name = item.name
         var description = item.description
         var thumb = item.thumbnail
-        var uri = thumb.path + '/standard_incredible.' + thumb.extension
+        var uri = thumb.path + '/portrait_uncanny.' + thumb.extension
         console.log(name)
         images.push(uri)
         names.push(name)
-        $("#images").append("<p>" + name + "</p>")
-        $("#images").append("<figure style='background-image:url(" + uri + ")'></figure>")
-
+        $("#images").append("<figure class='col-md-1' style='background-image:url(" + uri + ")'>" + name +"</figure>")
       })
 
     var offset = data.offset
