@@ -14,7 +14,7 @@ var names = []
 var ignores = [
   'http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708'
 ]
-var name = "Magneto"
+var name = "Quicksilver"
 
 paginate({
   limit: 1
@@ -57,7 +57,7 @@ function paginate (query, cb) {
         images.push(uri)
         names.push(name)
         $("#images").append("<figure class='col-md-1' style='background-image:url(" + uri + ")'>" + name +"</figure>")
-      })
+      });
 
     var offset = data.offset
     var count = data.count
