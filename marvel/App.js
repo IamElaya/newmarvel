@@ -6,14 +6,6 @@ const keys = {
   private: '9ad87557cac2adae4a2d4870629ee096d2a1c288'
 }
 
-var noop = function () {}
-var pages = 2
-var numPages = 0
-var images = []
-var names = []
-var ignores = [
-  'http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708'
-]
 var name = "Quicksilver"
 
 paginate({
@@ -24,11 +16,14 @@ paginate({
     error.removeAttribute('hidden')
     throw err
   }
-  
-  console.log('Total images:', images.length, images, names)
 })
 
 function paginate (query, cb) {
+  var noop = function () {}
+  var pages = 2
+  var numPages = 0
+  var images = []
+  var names = []
   cb = cb || noop
   query = query || {} 
   api('characters', {
@@ -53,7 +48,6 @@ function paginate (query, cb) {
         var description = item.description
         var thumb = item.thumbnail
         var uri = thumb.path + '/portrait_uncanny.' + thumb.extension
-        console.log(name)
         images.push(uri)
         names.push(name)
         $("#images").append("<figure class='col-md-1' style='background-image:url(" + uri + ")'>" + name +"</figure>")
@@ -67,11 +61,13 @@ function paginate (query, cb) {
       paginate(query, cb)
     } else {
       cb(null)
-      console.log(data)
     }
   });
 
   function validItem (item) {
+    var ignores = [
+      'http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708'
+    ]
     if (!item.thumbnail || !item.thumbnail.path) {
       return false
     }

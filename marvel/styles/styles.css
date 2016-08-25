@@ -33,6 +33,11 @@ figure {
     -o-background-size: cover;
     background-size: cover;
     position: relative;
+    transition: all .2s ease-in-out;
+}
+
+.col-md-1:hover {
+    transform: scale(1.1);
 }
 
 .col-md-1 {
