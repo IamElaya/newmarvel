@@ -17,13 +17,16 @@ body {
 }
 
 figure {
-    width: 33%;
+    width: 15%;
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
 }
 .col-md-1 {
-    display: inline-block;
     margin: 5%;
-    width: 300px;
-    height: 450px;
+    width: 268px;
+    height: 402px;
 /*    -webkit-clip-path: ellipse(50% at center);*/
     background-repeat: no-repeat; 
 /*    background-position: 50% 50%;*/
@@ -34,18 +37,12 @@ figure {
     background-size: cover;
     position: relative;
     transition: all .2s ease-in-out;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .col-md-1:hover {
     transform: scale(1.1);
-}
-
-.col-md-1 {
-    text-align: center;
-}
-
-.row:first-child {
-    padding-left: 15%
 }
 
 .navbarcustom {
@@ -56,6 +53,7 @@ figure {
   position: absolute;
   right: 0;
   left: 0;
+  bottom: 0;
   height: 10%;
 }
 
@@ -74,6 +72,7 @@ figure {
     width: 100%;
     text-align: center;
     position: relative;
+
 }
 
 #wrapper {
