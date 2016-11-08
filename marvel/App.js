@@ -6,30 +6,20 @@ const keys = {
   private: '9ad87557cac2adae4a2d4870629ee096d2a1c288'
 }
 
-// var characterName = $(function getCharacter() {
-//   $('#submitButton').on('click', function(){
-//     getName($('#characterName').val())
-
-//   });
-
-//   function getName(characterName) {
-//     var name = characterName
-//     console.log(name)
-//   }
-
-// });
-$('#submitButton').on('click', function(){
+// $('#submitButton').on('click', function(){
+$('#characterName').on('focusout', function(){
   $('#images').empty();
   var name = $('#characterName').val();
+  console.log(name);
   paginate({
-    limit: 1
+    limit: 10
   }, function (err) {
     if (err) {
       error.innerText = 'Error: ' + err.message
       error.removeAttribute('hidden')
       throw err
     }
-  })
+  });
 
   function paginate (query, cb) {
     var noop = function () {}
@@ -90,10 +80,6 @@ $('#submitButton').on('click', function(){
     }
   }
 }); 
-
-
-
-
 
 var App = React.createClass({
 
