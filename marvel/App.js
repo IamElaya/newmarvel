@@ -6,6 +6,7 @@ const keys = {
   private: '9ad87557cac2adae4a2d4870629ee096d2a1c288'
 }
 
+
 // $('#submitButton').on('click', function(){
 $('#characterName').on('focusout', function(){
   $('#images').empty();
@@ -53,8 +54,13 @@ $('#characterName').on('focusout', function(){
           var uri = thumb.path + '/portrait_uncanny.' + thumb.extension
           images.push(uri)
           names.push(name)
-          $("#images").append("<figure class='col-md-1' style='background-image:url(" + uri + ")'>" + name +"</figure>")
+          // $("#images").append("<figure class='col-md-1' style='background-image:url(" + uri + ")' data-lightbox=" + name + "><h1><span>" + name +"</span></h1></figure>")
+          $("#images").append("<figure class='col-md-1'><h1><span>" + name +"</span></h1><img src='" + uri + "'</figure>")
+
         });
+        // $("figure").on('click', function(){
+
+        // })
 
       var offset = data.offset
       var count = data.count
@@ -80,6 +86,8 @@ $('#characterName').on('focusout', function(){
     }
   }
 }); 
+
+
 
 var App = React.createClass({
 
