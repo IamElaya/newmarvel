@@ -84,12 +84,15 @@ $('#characterName').on('focusout', function(){
           images.push(uri)
           names.push(name)
           // $("#images").append("<figure class='col-md-1' style='background-image:url(" + uri + ")' data-lightbox=" + name + "><h1><span>" + name +"</span></h1></figure>")
-          $("#images").append("<figure class='col-md-1'><img src='" + uri + "'><h1><span>" + name +"</span></h1></img></figure>")
+          $("#images").append("<figure class='col-md-1'><img class='marvelCharacter' src='" + uri + "'><h1>" + name +"</h1></img></figure>")
 
         });
-        // $("figure").on('click', function(){
-
-        // })
+        $(".marvelCharacter").on("click", function() {
+          console.log($(this).find(name));
+          $('#imagetext').text($(this).find("h1")); 
+          $('#imagepreview').attr('src', $(this).attr('src')); // here asign the image to the modal when the user click the enlarge link
+          $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+        });
 
       var offset = data.offset
       var count = data.count
@@ -115,8 +118,6 @@ $('#characterName').on('focusout', function(){
     }
   }
 }); 
-
-
 
 var App = React.createClass({
 
