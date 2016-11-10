@@ -57,6 +57,7 @@ $('#characterName').on('focusout', function(){
     var numPages = 0
     var images = []
     var names = []
+    var links = []
     cb = cb || noop
     query = query || {} 
     api('characters', {
@@ -81,17 +82,19 @@ $('#characterName').on('focusout', function(){
           var description = item.description
           var thumb = item.thumbnail
           var uri = thumb.path + '/portrait_uncanny.' + thumb.extension
+          var link = item.urls[0].url
+          links.push(link)
           images.push(uri)
           names.push(name)
-          // $("#images").append("<figure class='col-md-1' style='background-image:url(" + uri + ")' data-lightbox=" + name + "><h1><span>" + name +"</span></h1></figure>")
-          $("#images").append("<figure class='col-md-1'><img class='marvelCharacter' src='" + uri + "'><h1>" + name +"</h1></img></figure>")
+          $("#images").append("<figure class='col-md-1'><div class='marvelCharacter'><img src='" + uri + "'><h1>" + name + "</h1><a style='display: none;' href='" + link + "'></a></div></figure>")
 
         });
         $(".marvelCharacter").on("click", function() {
-          console.log($(this).find(name));
-          $('#imagetext').text($(this).find("h1")); 
-          $('#imagepreview').attr('src', $(this).attr('src')); // here asign the image to the modal when the user click the enlarge link
-          $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+          console.log($(this).find("a").attr('href'))
+          $('.imagetext').text($(this).find("h1").html()); 
+          $('.imagepreview').attr('src', $(this).find("img").attr('src')); // here asign the image to the modal when the user click the enlarge link
+          $('.imagelink').attr('href', $(this).find('a').attr('href'))
+          $('.imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
         });
 
       var offset = data.offset

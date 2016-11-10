@@ -192,9 +192,18 @@ figure {
     text-align: center;
 }
 
-#imagepreview {
+.imagepreview {
     width: 60%; 
     height: 500px;
+}
+
+.imagetext {
+    color: white;
+}
+
+.modal-footer a {
+    text-align: center;
+    color: white;
 }
 
 #footer {

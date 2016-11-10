@@ -58,22 +58,25 @@
       </div>
     </nav>
     <div id="header" class="page header">
-      <h1>SEARCH FOR AND LEARN ABOUT YOUR FAVORITE <span><font style='color:white;''>MARVEL</font></span> CHARACTERS</h1>
+      <h1>LEARN ABOUT YOUR FAVORITE <span><font style='color:white;''>MARVEL</font></span> CHARACTERS</h1>
     </div>
     <div id="characters" class="container">
+      <!-- Character Images -->
       <div id="images" class="row"></div>
-      <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <!-- Modal Images -->
+      <div class="modal fade imagemodal"" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 id="imagetext" class="modal-title" id="myModalLabel"></h4>
+              <h4 class="imagetext modal-title" id="myModalLabel"></h4>
             </div>
             <div class="modal-body">
-              <img src="" id="imagepreview" >
+              <img src="" class="imagepreview" >
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <a class="imagelink" href="" target="_blank"><h1>Learn More</h1></a>
+              <button type="button" class="btn btn-default" data-dismiss="modal">X</button>
             </div>
           </div>
         </div>
