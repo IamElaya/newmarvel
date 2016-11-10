@@ -55,7 +55,7 @@ $('#characterName').on('focusout', function(){
           images.push(uri)
           names.push(name)
           // $("#images").append("<figure class='col-md-1' style='background-image:url(" + uri + ")' data-lightbox=" + name + "><h1><span>" + name +"</span></h1></figure>")
-          $("#images").append("<figure class='col-md-1'><h1><span>" + name +"</span></h1><img src='" + uri + "'</figure>")
+          $("#images").append("<figure class='col-md-1'><img src='" + uri + "'><h1><span>" + name +"</span></h1></img></figure>")
 
         });
         // $("figure").on('click', function(){
