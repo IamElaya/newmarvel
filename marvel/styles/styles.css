@@ -17,11 +17,90 @@ body {
     font-family: "Bebas";
 }
 
+.navbar-custom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  background-color: transparent;
+}
+
+@media only screen and (min-width: 1170px) {
+  .navbar-custom {
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+    /* Force Hardware Acceleration in WebKit */
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .navbar-custom.is-fixed {
+    /* when the user scrolls down, we hide the header right above the viewport */
+    position: fixed;
+    top: -51px;
+    background-color: #f0141e;
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+  }
+  .navbar-custom.is-fixed .navbar-brand {
+    color: white;
+  }
+  .navbar-custom.is-fixed .navbar-brand:hover,
+  .navbar-custom.is-fixed .navbar-brand:focus {
+    color: #0085A1;
+  }
+  .navbar-custom.is-fixed .nav li a {
+    color: white;
+  }
+  .navbar-custom.is-fixed .nav li a:hover,
+  .navbar-custom.is-fixed .nav li a:focus {
+    color: #0085A1;
+  }
+  .navbar-custom.is-visible {
+    /* if the user changes the scrolling direction, we show the header */
+    -webkit-transform: translate3d(0, 100%, 0);
+    -moz-transform: translate3d(0, 100%, 0);
+    -ms-transform: translate3d(0, 100%, 0);
+    -o-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.navbar-default .navbar-brand {
+    color: #f0141e;
+}
+
+.navbar-header a {
+    font-family: "Bebas";
+}
+
+.navbar-default .navbar-nav>li>a {
+    background-color: transparent;
+    font-family: "Bebas";
+    color: #f0141e;
+}
+
+.navbar-default {
+    background-color: transparent;
+    border-color: black;
+}
+
+button {
+    font-family: "Bebas";
+}
+
 #header {
     padding-top: 5%;
     margin: 0;
     background-color: black;
-    color: white;
+    color: #f0141e;
     text-align: center;
     bottom: 0;
     height: 50%;
@@ -73,29 +152,6 @@ figure {
 
 .characterName {
     width: 30%;
-}
-
-.navbar-default .navbar-brand {
-    color: white;
-}
-
-.navbar-header a {
-    font-family: "Bebas";
-}
-
-.navbar-default .navbar-nav>li>a {
-    background-color: #f0141e;
-    font-family: "Bebas";
-    color: white;
-}
-
-.navbar-default {
-    background-color: #f0141e;
-    border-color: #f0141e;
-}
-
-button {
-    font-family: "Bebas";
 }
 
 .error {
