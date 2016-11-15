@@ -246,7 +246,7 @@ figure {
     width: 100%;
     position: absolute;
     bottom: 0;
-    height: 10rem;
+    height: 20rem;
     background-color: black;
 /*    background: url(assets/marvel.jpeg);
     background-position: 50% 50%;
@@ -260,6 +260,29 @@ figure {
     text-align: center;
 }
 
+/*#footer h1 {
+    background-color: #f0141e;
+    width: 9.5%;
+    margin-top: 2%;
+    margin-left: 6%;
+    display:inline-block;
+    float: left;
+}*/
+
+#socialmedia {
+/*    float: right;
+    margin-right: 6%;*/
+    margin-top: 2%;
+}
+
+.fa-circle {
+    color: #f0141e;
+}
+
+.fa-circle:hover {
+    color: white;
+}
+
 #footertext {
-    margin-top: 1%;
+    margin-top: 2%;
 }
