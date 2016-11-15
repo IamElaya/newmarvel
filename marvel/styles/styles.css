@@ -92,6 +92,14 @@ body {
     border-color: black;
 }
 
+.navbar-brand:hover {
+    color: white !important;
+}
+
+ul.nav a:hover{
+    color: white !important;
+}
+
 button {
     font-family: "Bebas";
 }
@@ -118,7 +126,7 @@ figure {
     -o-background-size: cover;
     background-size: cover;
     position: relative;
-    height: 100%;
+    height: 50%;
 }
 
 .col-md-1 {
@@ -173,8 +181,7 @@ figure {
 
 #images {
     padding-top: 5%;
-    overflow: hidden;
-    min-height: 70rem;
+    min-height: 50rem;
     padding-bottom: 10%;
 }
 
@@ -182,14 +189,22 @@ figure {
     top: 0;
     padding: 0;
     width: 100%;
-    margin-bottom: 60rem;
+/*    margin-bottom: 60rem;*/
     background-color: black;
-    padding-bottom: 10%;
+    /*padding-bottom: 10%;*/
+}
+
+.close {
+    color: #f0141e;
+}
+
+.modal-body {
+    border: none;
 }
 
 .modal-content {
     background-color: transparent;
-    text-align: center;
+    color: white;
 }
 
 .imagepreview {
@@ -199,29 +214,52 @@ figure {
 
 .imagetext {
     color: white;
+    font-size: 200%;
 }
 
-.modal-footer a {
-    text-align: center;
+.imagelink {
+    color: #f0141e;
+}
+
+.imagelink:hover {
     color: white;
+}
+
+.bottomtext {
+    position: absolute;
+    bottom: 0;
+    width: 40%;
+    right: 0;
+}
+
+.red {
+  max-width: 90%;
+  margin: 0 auto;
+  border-width: 2px;
+  border-color: #f0141e;
 }
 
 #footer {
-    font-size: 150%;
+    font-size: 100%;
     font-family: "Bebas";
     color: white;
-    margin-top: 50rem;
     width: 100%;
     position: absolute;
     bottom: 0;
-    height: 80rem;
-    background: url(assets/marvel.jpeg);
+    height: 10rem;
+    background-color: black;
+/*    background: url(assets/marvel.jpeg);
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
+    background-size: cover;*/
     padding-top: 1%;
+    text-align: center;
+}
+
+#footertext {
+    margin-top: 1%;
 }

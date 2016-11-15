@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Marvel</title>
+    <script src="https://use.fontawesome.com/0cbd855dec.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/styles.css"/>
   </head>
@@ -67,17 +68,21 @@
       <div class="modal fade imagemodal"" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 class="imagetext modal-title" id="myModalLabel"></h4>
-            </div>
+<!--             <div class="modal-header">
+            </div> -->
             <div class="modal-body">
-              <img src="" class="imagepreview" >
+              <div class="row">
+                <img src="" class="col-md-8 imagepreview" >
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h1 class="imagetext modal-title" id="myModalLabel"></h1>
+                <span class="bottomtext">
+                  <a class="imagelink" href="" target="_blank"><h1>Learn More</h1></a>
+<!--                   <button type="button" class="btn btn-default" data-dismiss="modal">X</button> -->
+                </span>
+              </div>
             </div>
-            <div class="modal-footer">
-              <a class="imagelink" href="" target="_blank"><h1>Learn More</h1></a>
-              <button type="button" class="btn btn-default" data-dismiss="modal">X</button>
-            </div>
+<!--             <div class="modal-footer">
+            </div> -->
           </div>
         </div>
       </div>
@@ -87,7 +92,8 @@
       <script src="index.js"></script>
     </div>
     <footer id="footer">
-      <p id="footertext">©2016 Marvel.</p>
+      <hr class="red">
+      <p id="footertext">This is an unofficial website which is neither endorsed nor supported by Marvel Comics.<br>All Images and Names are the property of Marvel Comics<br>©2016 Marvel</p>
     </footer>
   </body>
 </html>
