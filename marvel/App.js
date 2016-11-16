@@ -78,6 +78,7 @@ $('#characterName').on('focusout', function(){
       data.results
         .filter(validItem)
         .forEach(function (item){
+          console.log(item);
           var name = item.name
           var description = item.description
           var thumb = item.thumbnail
@@ -86,7 +87,7 @@ $('#characterName').on('focusout', function(){
           links.push(link)
           images.push(uri)
           names.push(name)
-          $("#images").append("<figure class='col-md-1'><div class='marvelCharacter'><img src='" + uri + "'><h1>" + name + "</h1><a style='display: none;' href='" + link + "'></a></div></figure>")
+          $("#images").append("<figure class='col-xs-12 col-md-1'><div class='marvelCharacter'><img src='" + uri + "'></a><hr class='white'><h1>" + name + "</h1><a style='display: none;' href='" + link + "'></a></div></figure>")
 
         });
         $(".marvelCharacter").on("click", function() {

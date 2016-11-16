@@ -132,13 +132,13 @@ figure {
 .col-md-1 {
     margin: 1.667%;
     width: 30%;
-    height: 402px;
+    height: 100%;
     text-align: center;
     vertical-align: middle;
     font-family: "Bebas";
-    font-size: 150%;
+    font-size: 120%;
     color: white;
-    margin-bottom: 15%;
+    margin-bottom: 20%;
 }
 
 .col-md-1 img:hover {
@@ -150,6 +150,8 @@ figure {
 }*/
 
 .col-md-1 img {
+    height: 100%;
+    width: 100%;
     border-radius: 180px;
     transition: all .2s ease-in-out;
 }
@@ -183,6 +185,19 @@ figure {
     padding-top: 5%;
     min-height: 50rem;
     padding-bottom: 10%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#images img {
+    margin-bottom: 10%;
+}
+
+.white {
+  max-width: 50%;
+  margin: 0 auto;
+  border-width: 2px;
+  border-color: white;
 }
 
 #characters {
@@ -285,4 +300,16 @@ figure {
 
 #footertext {
     margin-top: 2%;
+}
+
+@media screen and (min-width: 0px) and (max-width: 450px) {
+  .col-md-1 { width: 100%; }  /* show it on small screens */
+}
+
+@media screen and (min-width: 0px) and (max-width: 450px) {
+  .col-md-1:last-child { margin-bottom: 30%; }  /* show it on small screens */
+}
+
+@media screen and (min-width: 0px) and (max-width: 450px) {
+  #footer { height: 15rem; }  /* show it on small screens */
 }
