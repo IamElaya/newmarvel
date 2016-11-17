@@ -345,7 +345,7 @@ figure {
 }
 
 @media screen and (min-width: 0px) and (max-width: 450px) {
-  .navbar-default .navbar-form { border-bottom: 2px solid #f0141e; border-top: none;}  /* show it on small screens */
+  .navbar-default .navbar-form { border-bottom: none; border-top: none;}  /* show it on small screens */
 }
 
 @media screen and (min-width: 0px) and (max-width: 450px) {
@@ -361,7 +361,11 @@ figure {
 }
 
 @media screen and (min-width: 0px) and (max-width: 450px) {
-  .imagelink h1 { font-size: 30%;}  /* show it on small screens */
+  .imagelink h1 { font-size: 50%;}  /* show it on small screens */
+}
+
+@media screen and (min-width: 0px) and (max-width: 450px) {
+  .bottomtext { position: relative;}  /* show it on small screens */
 }
 
 @media screen and (min-width: 0px) and (max-width: 450px) {
