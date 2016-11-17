@@ -54,13 +54,13 @@ ul.nav a:hover{
     color: white !important;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 450px) {
   .navbar-custom {
     background: transparent;
     border-bottom: 1px solid transparent;
   }
   .navbar-custom .navbar-brand {
-    color: white;
+    color: #f0141e;
     padding: 20px;
   }
   .navbar-custom .navbar-brand:hover,
@@ -68,7 +68,7 @@ ul.nav a:hover{
     color: rgba(255, 255, 255, 0.8);
   }
   .navbar-custom .nav li a {
-    color: white;
+    color: #f0141e;
     padding: 20px;
   }
   .navbar-custom .nav li a:hover,
@@ -207,7 +207,7 @@ figure {
 
 #images {
     padding-top: 5%;
-    min-height: 50rem;
+    min-height: 35rem;
     padding-bottom: 10%;
     width: 100%;
     overflow: hidden;
@@ -248,7 +248,7 @@ figure {
 
 .imagepreview {
     width: 60%; 
-    height: 500px;
+    height: 100%;
 }
 
 .imagetext {
@@ -260,6 +260,7 @@ figure {
     color: #f0141e;
 }
 
+
 .imagelink:hover {
     color: white;
 }
@@ -269,6 +270,7 @@ figure {
     bottom: 0;
     width: 40%;
     right: 0;
+    font-size: 200%;
 }
 
 .red {
@@ -359,5 +361,13 @@ figure {
 }
 
 @media screen and (min-width: 0px) and (max-width: 450px) {
-  #footer { height: 20rem; }  /* show it on small screens */
+  .imagelink h1 { font-size: 30%;}  /* show it on small screens */
+}
+
+@media screen and (min-width: 0px) and (max-width: 450px) {
+  .modal-dialog { padding-top: 30%;}  /* show it on small screens */
+}
+
+@media screen and (min-width: 0px) and (max-width: 450px) {
+  #footer { height: 18rem; }  /* show it on small screens */
 }
