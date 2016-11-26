@@ -9,118 +9,39 @@
     <link rel="stylesheet" href="./styles/styles.css"/>
   </head>
   <body>
-    <nav class="navbar navbar-custom navbar-default navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">Marvel</a>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li><a href="http://marvel.com/" target="_blank">Official Website<span class="sr-only">(current)</span></a></li>
-            <li><a href="http://marvel.com/universe/Main_Page" target="_blank">Wiki<span class="sr-only">(current)</span></a></li>
-<!--             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li> -->
-          </ul>
-<!--           <form class="navbar-form navbar-left">
-          </form> -->
-          <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" class="form-control" id="characterName" placeholder="Search">
-            </div>
-            <button type="submit" id="submitButton" class="btn btn-default">Search</button>
-<!--             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </li> -->
-          </form>
-        </div>
-      </div>
-    </nav>
-    <div id="header" class="page header">
-      <h1>LEARN ABOUT YOUR FAVORITE <span><font style='color:white;''>MARVEL</font></span> CHARACTERS</h1>
-    </div>
-    <div id="characters" class="container">
-      <!-- Character Images -->
-      <div id="images" class="row"></div>
-      <!-- Modal Images -->
-      <div class="modal fade imagemodal"" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-<!--             <div class="modal-header">
-            </div> -->
-            <div class="modal-body">
-              <div class="row">
-                <img src="" class="col-md-8 imagepreview" >
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h1 class="imagetext modal-title" id="myModalLabel"></h1>
-                <span class="bottomtext">
-                  <a class="imagelink" href="" target="_blank"><h1>Learn More</h1></a>
-<!--                   <button type="button" class="btn btn-default" data-dismiss="modal">X</button> -->
-                </span>
-              </div>
-            </div>
-<!--             <div class="modal-footer">
-            </div> -->
-          </div>
-        </div>
-      </div>
-      <div id="app"></div>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-      <script src="index.js"></script>
-    </div>
-    <footer id="footer">
-      <hr class="red">
-<!--       <span><h1>MARVEL</h1></span> -->
-      <div id="socialmedia">
-        <a href="#">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-        <a href="#">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-        <a href="#">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-        <a href="#">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </div>
-      <p id="footertext">This is an unofficial website which is neither endorsed nor supported by Marvel Comics.<br>All Images and Names are the property of Marvel Comics<br>©2016 Marvel</p>
-    </footer>
+    <div id="app"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script>
+      jQuery(document).ready(function($) {
+          var MQL = 1170;
+
+          //primary navigation slide-in effect
+          if ($(window).width() > MQL) {
+              var headerHeight = $('.navbar-custom').height();
+              $(window).on('scroll', {
+                      previousTop: 0
+                  },
+                  function() {
+                      var currentTop = $(window).scrollTop();
+                      //check if user is scrolling up
+                      if (currentTop < this.previousTop) {
+                          //if scrolling up...
+                          if (currentTop > 0 && $('.navbar-custom').hasClass('is-fixed')) {
+                              $('.navbar-custom').addClass('is-visible');
+                          } else {
+                              $('.navbar-custom').removeClass('is-visible is-fixed');
+                          }
+                      } else if (currentTop > this.previousTop) {
+                          //if scrolling down...
+                          $('.navbar-custom').removeClass('is-visible');
+                          if (currentTop > headerHeight && !$('.navbar-custom').hasClass('is-fixed')) $('.navbar-custom').addClass('is-fixed');
+                      }
+                      this.previousTop = currentTop;
+                  });
+          }
+      });
+    </script>
   </body>
 </html>
