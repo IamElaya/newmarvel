@@ -5,7 +5,7 @@ var Body = {
     return (
       <div id="characters" className="container">
         <div id="images" className="row"></div>
-        <div className="modal fade imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div className="modal fade imagemodal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-body">

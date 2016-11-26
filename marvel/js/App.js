@@ -1,13 +1,3 @@
-// var React = require('react');
-// var ReactDOM = require('react-dom');
-// var api = require('marvel-comics-api')
-// const keys = {
-//   public: '62b90bff7ee74248f2d2d4717bc4afac',
-//   private: '9ad87557cac2adae4a2d4870629ee096d2a1c288'
-// }
-
-
-
 
 // // $('#submitButton').on('click', function(){
 // $('#characterName').on('focusout', function(){
@@ -96,32 +86,19 @@
 //   }
 // }); 
 
-// var App = React.createClass({
-
-//   getInitialState: function() {
-//     return {
-//       currentCharName: "",
-//       currentCharDescription: "",
-//       currentCharPath: "",
-//       currentCharExtension: ""
-//     };
-//   },
-
-//   render: function() {
-//     return <div>{this.state.name}</div>
-//   }
-
-// });
-
-// export default App
-
 var React = require('react');
 var ReactDOM = require('react-dom');
+var api = require('marvel-comics-api');
 
 import NavBar from './components/NavBar.js'
 import Footer from './components/Footer.js'
 import Body from './components/Body.js'
 import Header from './components/Header.js'
+
+const keys = {
+  public: '62b90bff7ee74248f2d2d4717bc4afac',
+  private: '9ad87557cac2adae4a2d4870629ee096d2a1c288'
+}
 
 
 var App = React.createClass({
