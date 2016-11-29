@@ -18,11 +18,11 @@ const keys = {
 var App = React.createClass({
   getInitialState: function () {
     return {
-      characterName: 'Captain',
+      characterName: 'Jean',
     };
   },
 
-  componentWillMount: function paginate(query, cb) {
+  paginate(query, cb) {
     var that = this
     var noop = function () {}
     var pages = 2
@@ -101,7 +101,7 @@ var App = React.createClass({
         <Header />
         <div id="characters" className="container">
           <Body />
-          <Characters />
+          <Characters paginate={this.paginate} />
         </div>
         <Footer />
       </div>
@@ -109,6 +109,8 @@ var App = React.createClass({
   }
   
 });
+
+
 
 ReactDOM.render(<App />, document.getElementById('app')); 
 

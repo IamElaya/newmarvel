@@ -6,17 +6,21 @@ var style = {
 }
 
 var Characters = {
+  componentWillMount(){
+    this.props.paginate({
+      limit: 10
+    }, function (err) {
+      if (err) {
+        error.innerText = 'Error: ' + err.message
+        error.removeAttribute('hidden')
+        throw err
+      }
+    });
+  },
+
   render() {
     return (
       <div id="images" className="row">
-        <figure className='col-xs-12 col-md-1'>
-          <div className='marvelCharacter'>
-            <img src={this.props.uri} />
-            <hr className='white' />
-            <h1>{this.props.name}</h1>
-            <a style={style} href={this.props.link}></a>
-          </div>
-        </figure>
       </div>
     )
   }
