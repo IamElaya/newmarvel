@@ -1,29 +1,20 @@
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-var api = require('marvel-comics-api');
+// $('#submitButton').on('click', function(){
+$('#characterName').on('focusout', function(){
+  $('#images').empty();
+  var name = $('#characterName').val();
+  console.log(name);
+  paginate({
+    limit: 10
+  }, function (err) {
+    if (err) {
+      error.innerText = 'Error: ' + err.message
+      error.removeAttribute('hidden')
+      throw err
+    }
+  });
 
-import NavBar from './components/NavBar.js'
-import Footer from './components/Footer.js'
-import Body from './components/Body.js'
-import Header from './components/Header.js'
-import Characters from './components/Characters.js'
-
-const keys = {
-  public: '62b90bff7ee74248f2d2d4717bc4afac',
-  private: '9ad87557cac2adae4a2d4870629ee096d2a1c288'
-}
-
-
-var App = React.createClass({
-  getInitialState: function () {
-    return {
-      characterName: 'Captain',
-    };
-  },
-
-  componentWillMount: function paginate(query, cb) {
-    var that = this
+  function paginate (query, cb) {
     var noop = function () {}
     var pages = 2
     var numPages = 0
@@ -37,7 +28,7 @@ var App = React.createClass({
       privateKey: keys.private,
       timeout: 4000,
       query: {
-        'nameStartsWith': that.state.characterName
+        'nameStartsWith': name
       }
     }, function (err, body, resp) {
       if (err) {
@@ -92,24 +83,5 @@ var App = React.createClass({
       return thumb.path.indexOf('image_not_available') === -1
         && ignores.indexOf(thumb.path) === -1
     }
-  },
-
-  render: function () {
-    return (
-      <div id="container">
-        <NavBar />
-        <Header />
-        <div id="characters" className="container">
-          <Body />
-          <Characters />
-        </div>
-        <Footer />
-      </div>
-    )
   }
-  
-});
-
-ReactDOM.render(<App />, document.getElementById('app')); 
-
-export default App
+}); 
