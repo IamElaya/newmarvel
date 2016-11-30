@@ -1,9 +1,5 @@
 import React from 'react'
 var api = require('marvel-comics-api');
-var styles = require('./styles')
-var style = {
-  display: styles.display
-}
 
 const keys = {
   public: '62b90bff7ee74248f2d2d4717bc4afac',
@@ -24,7 +20,7 @@ var Characters = {
     api('characters', {
       publicKey: keys.public,
       privateKey: keys.private,
-      timeout: 2000,
+      timeout: 10000,
       query: {
         'nameStartsWith': this.props.characterName
       }
