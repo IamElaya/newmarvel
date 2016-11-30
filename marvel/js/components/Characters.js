@@ -24,7 +24,7 @@ var Characters = {
     api('characters', {
       publicKey: keys.public,
       privateKey: keys.private,
-      timeout: 1000,
+      timeout: 2000,
       query: {
         'nameStartsWith': this.props.characterName
       }
@@ -83,7 +83,7 @@ var Characters = {
     }
   },
 
-  componentWillUpdate(){
+  componentDidUpdate(){
     $('#images').empty();
     this.paginate({
       limit: 10
@@ -97,16 +97,6 @@ var Characters = {
   },
 
   render() {
-    this.paginate({
-      limit: 10
-    }, function (err) {
-      if (err) {
-        error.innerText = 'Error: ' + err.message
-        error.removeAttribute('hidden')
-        throw err
-      }
-    });
-
     return (
       <div id="images" className="row">
       </div>
