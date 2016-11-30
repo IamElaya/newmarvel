@@ -1,6 +1,24 @@
 import React from 'react';
 
 var NavBar = {
+  getInitialState: function () {
+    return {
+      name: ""
+    }
+  },
+
+  handleClick: function(name) {
+    name = this.state.name
+    this.props.onChange(name)
+  },
+
+  handleChange: function(e) {
+    var name = e.target.value;
+    this.setState({
+      name: name
+    })
+  },
+
   render() {
     return (
       <nav className="navbar navbar-custom navbar-default navbar-fixed-top">
@@ -21,9 +39,9 @@ var NavBar = {
             </ul>
             <form className="navbar-form navbar-right">
               <div className="form-group">
-                <input type="text" className="form-control" id="characterName" placeholder="Search" />
+                <input type="text" className="form-control" id="characterName" onChange={this.handleChange} value={this.state.name} placeholder="Search" />
               </div>
-              <button type="submit" id="submitButton" className="btn btn-default">Search</button>
+              <button type="submit" id="submitButton" className="btn btn-default" onClick={this.handleClick} >Search</button>
             </form>
           </div>
         </div>
