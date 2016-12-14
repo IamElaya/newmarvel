@@ -11,7 +11,7 @@ import {
   Text,
   TextInput,
   View,
-  Navigator
+  Navigator,
 } from 'react-native';
 
 import Characters from './Characters'
@@ -42,44 +42,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'black',
   },
-  welcome: {
-    color: '#f0141e',
-    fontFamily: 'Bebas',
-    fontSize: 15,
-    margin: 10,
-    paddingTop: 20,
-    textAlign: 'center'
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#f0141e',
-    marginBottom: 5,
-    fontFamily: 'Bebas'
-  },
-  marvel: {
-    color: 'white'
-  },
-  searchView: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingTop: 20
-  },
-  header: {
-    color: '#f0141e',
-    fontFamily: 'Bebas',
-    alignSelf: 'flex-start',
-    fontSize: 20
-  },
-  searchBar: {
-    backgroundColor: 'white',
-    borderColor: 'black',
-    borderRadius: 5,
-    borderWidth: 1,
-    fontFamily: 'Bebas',
-    height: 30,
-    width: 100,
-    paddingLeft: 5
-  }
 });
 
 AppRegistry.registerComponent('newmarvel', () => newmarvel);
